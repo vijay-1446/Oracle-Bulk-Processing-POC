@@ -372,7 +372,7 @@ WHERE DIRECTORY_NAME = 'CSV_DIR';
 ```
 ### 4.2 - Develop UTL_FILE Export Procedure
 ```sql
-CREATE OR REPLACE PROCEDURE HR.EXPORT_EMP_STAGEB_CSV
+CREATE OR REPLACE PROCEDURE EXPORT_EMP_STAGEB_CSV
 IS
     L_FILE      UTL_FILE.FILE_TYPE;
     L_HEADER    VARCHAR2(1000);
@@ -389,7 +389,7 @@ IS
                EMAIL,
                LOCATION,
                LOAD_DATE
-        FROM HR.EMPLOYEES_STG_B;
+        FROM EMPLOYEES_STG_B;
 
     L_RECORD VARCHAR2(4000);
 
@@ -458,12 +458,12 @@ EXCEPTION
             'Unexpected Error: ' || SQLERRM
         );
 
-END HR.EXPORT_EMP_STAGEB_CSV;
+END EXPORT_EMP_STAGEB_CSV;
 ```
 ### 4.3 -Export Stage B Data to CSV
 ```sql
 Begin
-HR.PRC_EMP_STAGEA_TO_STAGEB;
+HR.EXPORT_EMP_STAGEB_CSV;
 end;
 ```
 
