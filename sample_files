@@ -1,0 +1,10 @@
+Oracle-ETL-POC/
+│
+├── README.md
+├── generate_employee_data.py
+├── create_stage_a.sql
+├── employees.ctl
+├── create_stage_b.sql
+├── prc_stagea_to_stageb.sql
+├── export_stageb_csv.sql
+└── sample_output.csv
